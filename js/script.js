@@ -1,3 +1,6 @@
+/* default */
+const body = document.body
+// navbar
 if (document.querySelector('.nav')) {
     const navbar = document.querySelector('.navbar')
     const navBurger = navbar.querySelector('.burger')
@@ -7,17 +10,21 @@ if (document.querySelector('.nav')) {
         if (navBurger.classList.contains('active')) {
             navBurger.classList.remove('active')
             navMenu.classList.remove('active')
+            body.classList.remove('locked')
         } else {
             navBurger.classList.add('active')
             navMenu.classList.add('active')
+            body.classList.add('locked')
         }
     })
     /* fixed navbar */
-    window.onscroll = () => {
+    function fixedNav() {
         if (window.scrollY > 1) {
             navbar.classList.add("fixed")
         } else {
             navbar.classList.remove("fixed")
         }
     }
+    fixedNav()
+    window.onscroll = fixedNav
 }
