@@ -1261,3 +1261,176 @@ textarea {
 .reasons__item div {
    font-family: "Raleway", sans-serif;
 }
+
+/* steps */
+.steps {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   overflow: hidden;
+}
+
+.steps__title {
+   font-size: 40px;
+   margin-bottom: 74px;
+}
+
+.steps__items {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin-bottom: -54px;
+}
+
+.steps__item {
+   flex: 0 1 calc(25% - 18px);
+   margin-right: 24px;
+   margin-bottom: 54px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   padding: 30px 18px 20px;
+   border-radius: 20px;
+   background: linear-gradient(180deg, #E4E5EA 0%, #EFEFF4 52.40%, #DDDFEA 100%);
+}
+
+.steps__item::before {
+   content: '';
+   width: 56px;
+   height: 56px;
+   position: absolute;
+   left: -12px;
+   top: 50%;
+   -webkit-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   background: url(../img/item-decor.svg) center center / 100% 100% no-repeat;
+}
+
+.steps__item:nth-child(4n+4) {
+   margin-right: 0;
+}
+
+.steps__item:nth-child(4n+1)::before {
+   display: none;
+}
+
+.steps__item img {
+   border-radius: 30px;
+   background: rgba(255, 255, 255, 0.45);
+   backdrop-filter: blur(2px);
+   width: 189px;
+   height: 189px;
+   object-fit: contain;
+   object-position: center bottom;
+   margin-bottom: 21px;
+}
+
+.steps__item-num {
+   width: 89px;
+   height: 34px;
+   border-radius: 20% 20% 0% 0% / 80% 100% 20% 0%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #fff;
+   z-index: -1;
+   left: 50%;
+   transform: translate(-50%, 0);
+   position: absolute;
+   background: linear-gradient(180deg, #8DCA50 0%, #608E31 100%);
+   top: -24px;
+}
+
+.steps__item-title {
+   background: linear-gradient(180deg, #8DCA50 0%, #608E31 100%);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   margin-bottom: 15px;
+}
+
+.steps__item p,
+.steps__item span,
+.steps__item div {
+   font-family: "Raleway", sans-serif;
+}
+
+/* advant */
+.advant {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   overflow: hidden;
+}
+
+.advant__title {
+   font-size: 40px;
+   margin-bottom: 40px;
+   text-align: center;
+}
+
+.advant__content {
+   position: relative;
+   max-width: 996px;
+   width: 100%;
+   margin-bottom: 80px;
+   border-radius: 10px;
+   padding: 50px 70px 95px 97px;
+   background: url(../img/advent-bg.webp) top center / auto no-repeat, linear-gradient(180deg, #8DCA50 0%, #608E31 100%);
+}
+
+.advant__items {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.advant__item {
+   margin-right: 10px;
+   margin-bottom: 20px;
+   color: #fff;
+   width: 100%;
+   text-align: center;
+}
+
+.advant__item1 {
+   max-width: 209px;
+}
+
+.advant__item2 {
+   max-width: 324px;
+}
+
+.advant__item3 {
+   max-width: 244px;
+}
+
+.advant__item-item {
+   text-shadow: 0px 4px 4px rgba(85, 129, 41, 0.55);
+   font-size: 46px;
+   margin-bottom: 12px;
+}
+
+.advant__container {
+   border-radius: 15px;
+   background: linear-gradient(180deg, #E4E5EA 0%, #EFEFF4 52.40%, #DDDFEA 100%);
+   position: absolute;
+   bottom: 0px;
+   left: 50%;
+   transform: translate(-50%, 50%);
+   display: flex;
+   align-items: center;
+   font-family: "Raleway", sans-serif;
+   line-height: 110%;
+   max-width: 414px;
+   width: 100%;
+   padding: 17px 10px 17px 20px;
+}
+
+.advant__container .btn {
+   margin-right: 15px;
+   min-width: 243px;
+}
