@@ -300,9 +300,11 @@
     }
 
     .hero__img img {
+        width: -webkit-calc(100% + 10px);
         width: calc(100% + 10px);
         margin-left: -20px;
         height: 285px;
+        -o-object-fit: contain;
         object-fit: contain;
     }
 
@@ -424,7 +426,10 @@
 
     /* hero */
     .hero__container .btn {
+        min-width: -webkit-fit-content;
+        min-width: -moz-fit-content;
         min-width: fit-content;
+        max-width: -webkit-calc(100% - 15px);
         max-width: calc(100% - 15px);
         width: 100%;
         padding: 25px 0 26px;
@@ -442,6 +447,7 @@
     .features {
         left: -10px;
         right: -10px;
+        width: -webkit-calc(100% + 20px);
         width: calc(100% + 20px);
     }
 
