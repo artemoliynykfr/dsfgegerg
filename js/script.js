@@ -151,12 +151,4 @@ if (document.querySelector('.examples__swiper.swiper')) {
             prevEl: '.swiper-prev',
         },
     });
-    document.addEventListener("DOMContentLoaded", () => {
-        setEqualSlideHeight(".examples__swiper.swiper .swiper-slide");
-    });
-    if (!isMobileDevice()) {
-        window.addEventListener("mouseover", () => {
-            setEqualSlideHeight(".examples__swiper.swiper .swiper-slide");
-        });
-    }
 }

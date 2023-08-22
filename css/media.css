@@ -34,6 +34,10 @@
     }
 
     /* features */
+    .section__features {
+        padding: 70px 0 41px;
+    }
+
     .features .col-4 {
         width: 33.3%;
     }
@@ -219,6 +223,10 @@
     }
 
     /* reasons */
+    .reasons__items .col-3 {
+        width: 50%;
+    }
+
     .reasons__items .col-3:nth-child(3n+1)::before {
         display: -webkit-box;
         display: -webkit-flex;
@@ -288,6 +296,11 @@
     .examples__item-title.mob {
         display: block;
         text-align: center;
+    }
+
+    /* advant */
+    .advant__items .col-3 {
+        width: 50%;
     }
 }
 
