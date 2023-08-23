@@ -89,11 +89,18 @@ if (document.querySelector('.katalog__swiper.swiper')) {
         loop: !1,
         speed: 1000,
         slidesPerView: 1,
-        spaceBetween: 24,
-
+        spaceBetween: 20,
+        grid: {
+            rows: 4,
+            fill: "row",
+        },
         breakpoints: {
             1111: {
                 slidesPerView: 4,
+                grid: {
+                    rows: 1,
+                    fill: "row",
+                },
             },
             993: {
                 slidesPerView: 3,
@@ -104,18 +111,12 @@ if (document.querySelector('.katalog__swiper.swiper')) {
             },
             601: {
                 slidesPerView: 2,
+                spaceBetween: 24,
                 grid: {
                     rows: 2,
                     fill: "row",
                 },
             },
-            0: {
-                slidesPerView: 1,
-                grid: {
-                    rows: 4,
-                    fill: "row",
-                },
-            }
         },
         navigation: {
             nextEl: '.swiper-next',
