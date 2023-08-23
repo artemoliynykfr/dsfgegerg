@@ -153,3 +153,12 @@ if (document.querySelector('.examples__swiper.swiper')) {
         },
     });
 }
+/* modal */
+if (document.querySelector('.modal')) {
+    const modalBtns = document.querySelectorAll('.modal-open')
+    for (const modalBtn of modalBtns) {
+        $(modalBtn).magnificPopup({
+            type: "inline"
+        })
+    }
+}
