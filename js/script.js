@@ -82,6 +82,15 @@ if (document.querySelector('.nav')) {
     fixedNav()
     window.onscroll = fixedNav
 }
+/* modal */
+if (document.querySelector('.modal')) {
+    const modalBtns = document.querySelectorAll('.modal-open')
+    for (const modalBtn of modalBtns) {
+        $(modalBtn).magnificPopup({
+            type: "inline"
+        })
+    }
+}
 /* swiper for katalog section */
 if (document.querySelector('.katalog__swiper.swiper')) {
     new Swiper('.katalog__swiper.swiper', {
@@ -141,24 +150,28 @@ if (document.querySelector('.advant')) {
 }
 /* swiper for exaples section */
 if (document.querySelector('.examples__swiper.swiper')) {
-    new Swiper('.examples__swiper.swiper', {
-        direction: 'horizontal',
-        loop: !1,
-        speed: 1000,
-        slidesPerView: 1,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.swiper-next',
-            prevEl: '.swiper-prev',
-        },
-    });
-}
-/* modal */
-if (document.querySelector('.modal')) {
-    const modalBtns = document.querySelectorAll('.modal-open')
-    for (const modalBtn of modalBtns) {
-        $(modalBtn).magnificPopup({
-            type: "inline"
-        })
+    const exampleSwipers = document.querySelectorAll('.examples__swiper.swiper')
+    for (const exampleSwiper of exampleSwipers) {
+        new Swiper(exampleSwiper, {
+            direction: 'horizontal',
+            loop: !0,
+            speed: 1000,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.nextProject',
+            },
+        });
+        new Swiper(exampleSwiper.querySelector('.examples__item-swiper'), {
+            direction: 'horizontal',
+            loop: !1,
+            speed: 1000,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-next',
+                prevEl: '.swiper-prev',
+            },
+        });
     }
 }
