@@ -93,7 +93,7 @@ if (document.querySelector('.modal')) {
 }
 /* swiper for katalog section */
 if (document.querySelector('.katalog__swiper.swiper')) {
-    new Swiper('.katalog__swiper.swiper', {
+    const karalogSwiper = new Swiper('.katalog__swiper.swiper', {
         direction: 'horizontal',
         loop: !1,
         speed: 1000,
@@ -132,6 +132,40 @@ if (document.querySelector('.katalog__swiper.swiper')) {
             prevEl: '.swiper-prev',
         },
     });
+    if (document.querySelector('.section__katalog-help')) {
+        karalogSwiper.params.breakpoints = {
+            1111: {
+                slidesPerView: 4,
+                grid: {
+                    rows: 1,
+                    fill: "row",
+                },
+            },
+            993: {
+                slidesPerView: 3,
+                grid: {
+                    rows: 1,
+                    fill: "row",
+                },
+            },
+            601: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+                grid: {
+                    rows: 1,
+                    fill: "row",
+                },
+            },
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                grid: {
+                    rows: 1,
+                    fill: "row",
+                },
+            },
+        }
+    }
     document.addEventListener("DOMContentLoaded", () => {
         setEqualSlideHeight(".katalog__swiper.swiper .swiper-slide");
     });
@@ -174,4 +208,25 @@ if (document.querySelector('.examples__swiper.swiper')) {
             },
         });
     }
+}
+/*  */
+if (document.querySelector('.card__image')) {
+    const cardImage = document.querySelector('.card__image');
+    const containerHeight = document.querySelector('.card').offsetHeight;
+    const adjustedHeight = containerHeight - 380;
+    window.onscroll = () => {
+        if (window.innerWidth > 992) {
+            if (window.scrollY >= adjustedHeight) {
+                cardImage.style.top = 'auto';
+                cardImage.style.bottom = '0';
+            } else {
+                const newTop = Math.max(window.scrollY - 40, 0);
+                cardImage.style.top = `${newTop}px`;
+            }
+            const topValue = parseFloat(cardImage.style.top);
+            if (topValue <= -1) {
+                cardImage.style.top = '0';
+            }
+        }
+    };
 }
