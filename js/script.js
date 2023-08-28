@@ -5,10 +5,7 @@ const observerOptions = {
     rootMargin: "0px",
     threshold: 0.3,
 };
-const observer = new IntersectionObserver(
-    handleIntersection,
-    observerOptions
-);
+const observer = new IntersectionObserver(handleIntersection, observerOptions);
 /* default functions */
 function animateNumberCount(element) {
     const endValue = parseInt(element.textContent, 10);
@@ -22,13 +19,12 @@ function animateNumberCount(element) {
             currentCount = endValue;
             clearInterval(intervalId);
         }
-        const formattedCount = Math.floor(currentCount)
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        const formattedCount = Math.floor(currentCount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
         element.textContent = formattedCount;
     };
     const intervalId = setInterval(updateCount, interval);
 }
+
 function handleIntersection(entries) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -37,6 +33,7 @@ function handleIntersection(entries) {
         }
     });
 }
+
 function setEqualSlideHeight(slides) {
     slides = document.querySelectorAll(`${slides}`);
     var maxHeight = 0;
@@ -51,6 +48,7 @@ function setEqualSlideHeight(slides) {
         slide.style.height = maxHeight + "px";
     });
 }
+
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
@@ -80,7 +78,9 @@ if (document.querySelector('.nav')) {
         }
     }
     fixedNav()
-    window.onscroll = fixedNav
+    window.addEventListener('scroll', () => {
+        fixedNav()
+    })
 }
 /* modal */
 if (document.querySelector('.modal')) {
@@ -214,7 +214,7 @@ if (document.querySelector('.card__image')) {
     const cardImage = document.querySelector('.card__image');
     const containerHeight = document.querySelector('.card').offsetHeight;
     const adjustedHeight = containerHeight - 380;
-    window.onscroll = () => {
+    window.addEventListener('scroll', () => {
         if (window.innerWidth > 992) {
             if (window.scrollY >= adjustedHeight) {
                 cardImage.style.top = 'auto';
@@ -228,5 +228,5 @@ if (document.querySelector('.card__image')) {
                 cardImage.style.top = '0';
             }
         }
-    };
+    })
 }

@@ -164,10 +164,12 @@
     .card__image img {
         width: 100%;
         height: 100%;
+        -o-object-fit: contain;
         object-fit: contain;
     }
 
     .card__content {
+        width: -webkit-calc(100% - 384px);
         width: calc(100% - 384px);
     }
 }
@@ -186,7 +188,6 @@
 
     .navbar.fixed .nav {
         padding: 6px 6px 6px 12px;
-
     }
 
     .nav__menu {
@@ -205,12 +206,18 @@
         -webkit-flex-direction: column;
         -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
         padding: 30px;
         -webkit-transition: all .3s ease;
         -o-transition: all .3s ease;
         transition: all .3s ease;
+        -webkit-border-radius: 5px;
         border-radius: 5px;
+        background: -webkit-gradient(linear, left top, left bottom, from(#E4E5EA), color-stop(52.40%, #EFEFF4), to(#DDDFEA));
+        background: -o-linear-gradient(top, #E4E5EA 0%, #EFEFF4 52.40%, #DDDFEA 100%);
         background: linear-gradient(180deg, #E4E5EA 0%, #EFEFF4 52.40%, #DDDFEA 100%);
         overflow-y: scroll;
     }
@@ -234,7 +241,8 @@
         border: 0;
         color: #fff;
         background: -o-linear-gradient(top, #608E31 0%, #8DCA50 100%);
-        background: -webkit-gradient(linear, left top, left bottom, from(#608E31), to(#8DCA50));
+        background: url(../img/phone.svg) center right 42px / auto no-repeat, -webkit-gradient(linear, left top, left bottom, from(#608E31), to(#8DCA50));
+        background: url(../img/phone.svg) center right 42px / auto no-repeat, -o-linear-gradient(top, #608E31 0%, #8DCA50 100%);
         background: url(../img/phone.svg) center right 42px / auto no-repeat, linear-gradient(180deg, #608E31 0%, #8DCA50 100%);
         padding: 25px 69px 25px 49px;
         min-height: 69px;
@@ -314,6 +322,10 @@
         bottom: 0;
         right: 0;
         margin: 40px auto 0;
+    }
+
+    .hero__title br {
+        display: none;
     }
 
     /* solution */
@@ -526,6 +538,11 @@
         display: none;
         position: relative;
         margin: 20px 0;
+        z-index: 0;
+    }
+
+    .card__image img {
+        z-index: -1;
     }
 
     .card__btn {
@@ -533,16 +550,25 @@
     }
 
     .card .mob {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
     }
 
     .card__content {
         width: 100%;
     }
+
     .card__price {
         margin: 0px 0 20px;
     }
+
     .card {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
@@ -565,6 +591,10 @@
 
     section {
         padding: 40px 0;
+    }
+
+    main section:first-child {
+        margin-top: 55px;
     }
 
     /* navbar */
@@ -754,10 +784,7 @@
 
     .hero__title {
         margin-bottom: 20px;
-    }
-
-    .hero__title br {
-        display: block;
+        font-size: 24px;
     }
 
     /* solution */
@@ -1014,8 +1041,18 @@
 
     /* card */
     .card__tabs-content3 {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
@@ -1024,6 +1061,9 @@
     }
 
     .card__tabs-content3 .btn.mob {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
     }
 
@@ -1033,6 +1073,10 @@
 
     .card__tabs-content .reviews__rate {
         max-width: 415px;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
         flex-direction: row;
     }
 
@@ -1047,9 +1091,13 @@
 
     .card__tabs-header {
         width: 100%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
-    
+
     .card .btn {
         display: none;
     }
@@ -1213,6 +1261,10 @@
     /* card */
     .card__tabs-item {
         padding: 10px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
@@ -1363,11 +1415,15 @@
 
     /* quiz */
     .quiz__control .btn {
+        min-width: -webkit-fit-content;
+        min-width: -moz-fit-content;
         min-width: fit-content;
         padding: 22px 30px;
     }
 
     .quiz__form {
+        min-height: -webkit-fit-content;
+        min-height: -moz-fit-content;
         min-height: fit-content;
     }
 
@@ -1376,7 +1432,14 @@
     }
 
     .quiz__item7 .quiz__control {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
@@ -1388,7 +1451,11 @@
     .quiz__item7 .quiz__control .btn-outline {
         margin-right: 0;
         margin-top: 33px;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
+        min-width: -webkit-fit-content;
+        min-width: -moz-fit-content;
         min-width: fit-content;
     }
 
@@ -1481,6 +1548,8 @@
 
     .card__tabs-content .reviews__item,
     .card__tabs-content .reviews__rate {
+        background: -webkit-gradient(linear, left top, left bottom, from(#E4E5EA), color-stop(52.40%, #EFEFF4), to(#DDDFEA));
+        background: -o-linear-gradient(top, #E4E5EA 0%, #EFEFF4 52.40%, #DDDFEA 100%);
         background: linear-gradient(180deg, #E4E5EA 0%, #EFEFF4 52.40%, #DDDFEA 100%);
     }
 }
@@ -1579,6 +1648,12 @@
     /* features */
     .features .col-4 {
         width: 100%;
+    }
+
+    /* card */
+    .card__image {
+        max-width: 100%;
+        min-width: 100%;
     }
 }
 
