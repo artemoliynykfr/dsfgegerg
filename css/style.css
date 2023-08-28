@@ -625,6 +625,7 @@ textarea {
 
 .checkbox {
    cursor: pointer;
+   box-shadow: none !important;
 }
 
 .checkbox input {
@@ -635,6 +636,7 @@ textarea {
    appearance: none;
    opacity: 0;
    overflow: hidden;
+   box-shadow: none !important;
 }
 
 .checkbox::before {
@@ -649,9 +651,11 @@ textarea {
    border-radius: 50%;
    background: #FFF;
    margin-right: 5px;
+   box-shadow: none !important;
 }
 
 .checkbox:has(input:checked)::before {
+   box-shadow: none !important;
    background: url(../img/checkbox-arrow-dark.svg?ver=1) center center / auto no-repeat, #fff;
 }
 
