@@ -1430,10 +1430,12 @@
     .quiz__item6 .col-2 {
         width: 100%;
     }
-    .quiz__item .checkbox {
+
+    .quiz__item1 .checkbox:has(input:checked)::before {
         box-shadow: none !important;
         filter: none !important;
     }
+
     .quiz__item7 .quiz__control {
         -webkit-box-orient: vertical;
         -webkit-box-direction: reverse;
