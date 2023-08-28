@@ -70,17 +70,21 @@ if (document.querySelector('.nav')) {
         }
     })
     /* fixed navbar */
-    function fixedNav() {
-        if (window.scrollY > 1) {
-            navbar.classList.add("fixed")
-        } else {
-            navbar.classList.remove("fixed")
+    window.addEventListener('DOMContentLoaded', () => {
+        const navbar = document.querySelector('.navbar');
+        function fixedNav() {
+            if (window.scrollY > 1) {
+                navbar.classList.add("fixed");
+            } else {
+                navbar.classList.remove("fixed");
+            }
         }
-    }
-    fixedNav()
-    window.addEventListener('scroll', () => {
-        fixedNav()
-    })
+        fixedNav();
+        window.addEventListener('scroll', () => {
+            fixedNav();
+        });
+    });
+
 }
 /* modal */
 if (document.querySelector('.modal')) {
