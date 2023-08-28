@@ -80,9 +80,7 @@ if (document.querySelector('.nav')) {
             }
         }
         fixedNav();
-        window.addEventListener('scroll', () => {
-            fixedNav();
-        });
+        window.addEventListener('scroll', fixedNav);
     });
 
 }

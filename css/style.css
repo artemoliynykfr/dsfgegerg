@@ -634,11 +634,13 @@ textarea {
    border-radius: 50%;
    appearance: none;
    opacity: 0;
+   overflow: hidden;
 }
 
 .checkbox::before {
    content: '';
    display: inline-block;
+   overflow: hidden;
    max-width: 11px;
    min-width: 11px;
    width: 100%;
